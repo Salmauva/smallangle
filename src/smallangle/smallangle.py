@@ -16,6 +16,8 @@ def cmd_group():
 
 # sub commando for sin with right steps
 @cmd_group.command()
+
+# option for how many steps for tan
 @click.option(
     "-n",
     "--count",
@@ -23,6 +25,7 @@ def cmd_group():
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
+# function for sin
 def sin(count):
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
@@ -31,6 +34,8 @@ def sin(count):
 
 # sub commando for tan with right steps
 @cmd_group.command()
+
+# option for how many steps for tan
 @click.option(
     "-n",
     "--count",
@@ -38,11 +43,12 @@ def sin(count):
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
+# function for tan
 def tan(count):
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
     print(df)
 
-
+# do a command so you can call the name 'smallangle'
 if __name__ == "__main__":
     cmd_group()
