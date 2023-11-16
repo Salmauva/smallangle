@@ -10,7 +10,12 @@ import pandas as pd
 
 # make group of multible sub commdandos
 @click.group()
+
 def cmd_group():
+    """Function that passes over other functions
+    Args: 
+        none
+    """     
     pass
 
 
@@ -25,8 +30,15 @@ def cmd_group():
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
-# function for sin gives list with length count bac
+
 def sin(count):
+ 
+    """Function calculate sin between 0 and 2pi and give it as a list with length the given count
+    
+    Args: 
+        count (int): give how many steps between 0 and 2pi you want
+    """  
+     
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
     print(df)
@@ -43,8 +55,14 @@ def sin(count):
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
-# function for tan gives list with length count back
-def tan(count):
+
+def tan(count): 
+
+    """Function calculate tan between 0 and 2pi and give it as a list with length the given count
+    
+    Args: 
+        count (int): give how many steps between 0 and 2pi you want
+    """     
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
     print(df)
