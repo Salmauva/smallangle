@@ -25,7 +25,7 @@ def cmd_group():
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
-# function for sin
+# function for sin gives list with length count bac
 def sin(count):
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
@@ -43,7 +43,7 @@ def sin(count):
     help="Choose how many steps between 0 and 2pi you want",
     show_default=True,  # show default in help
 )
-# function for tan
+# function for tan gives list with length count back
 def tan(count):
     x = np.linspace(0, 2 * pi, count)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
